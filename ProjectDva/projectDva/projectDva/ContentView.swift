@@ -18,9 +18,22 @@ struct ContentView: View {
                     .font(.system(size: 50))
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Как дела?")
-                })
+                                  })
                 .font(.system(size: 20, weight: .black, design: .monospaced))
                 .frame(width: 200, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color("gs2"))
+                
+                Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("Хорошего дня!   ;-)")
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                        
+                })
+                
+                
+                Spacer()
+                
                 
             }
             
