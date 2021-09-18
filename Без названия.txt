@@ -1,0 +1,36 @@
+https://app.swaggerhub.com/apis-docs/k5422/smart/dqsfwaegrshdjtyrste
+https://cocoapods.org/
+http://api.weatherapi.com/v1/current.json?key=ee170084c26b442da7882229211709&q=London&aqi=no ccskrf yf elk
+
+
+import SwiftUI
+
+struct ContentView: View {
+    @State var animation = false
+    var body: some View {
+        ZStack(){
+            Color("Blue")
+                .opacity(animation ? 1:0)
+                .animation(Animation.linear, value: animation)
+                
+            Image("Birds")
+              // self.animation.toggle()
+                .scaleEffect(animation ? 2:1,anchor: .center)
+               .animation(Animation.linear, value: animation)
+                
+        }.ignoresSafeArea()
+        
+        .onAppear{
+            animation = true
+        }
+        
+    }
+    
+}
+
+    struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+  

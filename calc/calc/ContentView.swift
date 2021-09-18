@@ -62,14 +62,14 @@ struct ContentView: View {
                             .background(Color("Temniy"))
                     })
                     Button(action: {
-                        if function == "" {
+                       /* if function == "" {  */
                             number = String(Double(number)! / 100)
-                        }
+                      /*  }
                         
                         else {
                             number = String((Double(number)! * Double(numberTwo)!)/100)
                                  function=""
-                        }
+                        }  */
                         
                         
                     }, label: {
@@ -79,8 +79,38 @@ struct ContentView: View {
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)                            .frame(width: UIScreen.main.bounds.width/4-1, height: UIScreen.main.bounds.width/4-1, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .background(Color("Temniy"))
                     })
-                    Button(action: {
-                        function = "/"
+                    Button(action: { var result=0.0
+                        
+                        if function=="" {
+                            function = "/"
+                            
+                        } else {
+                            
+                            switch function {
+                            case "/":
+                                
+                                result=Double(number)! / Double(numberTwo)!
+                            case "*":
+                                result=Double(number)! * Double(numberTwo)!
+                            case "+":
+                                result=Double(number)! + Double(numberTwo)!
+                            case "-":
+                                result=Double(number)! - Double(numberTwo)!
+                            default:
+                                break
+                            }
+                            
+                            function=""
+                            numberTwo="0"
+                            
+                            if result-Double(Int(result)) == 0.0{
+                                number=String(Int(result))
+                            } else {
+                                number=String(result)
+                                
+                            }                        }
+                        
+                        
                     }, label: {
                         Image(systemName: "divide")
                             .foregroundColor(.white)
